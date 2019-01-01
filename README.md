@@ -1,4 +1,4 @@
-#PMAC - Paramour Multi-Animation Controller
+# PMAC - Paramour Multi-Animation Controller
 
 Animation system for OpenSim that uses OSSL functions.
 

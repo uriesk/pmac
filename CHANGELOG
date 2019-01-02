@@ -1,0 +1,54 @@
+v. 1.0 January 2015 (Initial beta release)
+
+v. 1.01 March 2015 (General release)
+- NEW: added ability to supply a configuration notecard that will be read on
+initialization and override scripted variable values (written by Seth Nygard -
+thanks Seth!)
+- TWEAK: tweaked Seth's configuration addition to support both his nameset as
+well as the actual variable names being supplied
+- TWEAK: slight further optimizations of memory use
+- TWEAK: system is now made completely inactive if worn
+- TWEAK: only owner is now notified when initialization completes
+- FIX: minor text tweaks and typo corrections
+
+v 1.02 May 2015 (Update Release)
+- BUGFIX/OVERSIGHT: add flag so if an addon rezzes an object core is prevented
+from interpreting this as an edit handle being rezzed and entering edit mode
+- BUGFIX: fixed a bug in edit mode list wrapping where advancing from the last
+animation in a group using "NEXT" would pull the incorrect data for the next
+(first) animation.
+- TWEAK: set a minimal sit target on root to allow sitting on it from distances
+greater than 10m
+- TWEAK: When displaying animation number range in dialog menu, display the
+actual range instead of possible range
+- NEW: added support for the Object-Rezzing prop add-on "NC_PROP" by Neo Cortex
+(code from Neo)
+- NEW/TWEAK: Altered script logic to optionally allow NPCs to occupy a PMAC
+object with no "real" avatars being present and added a user configuration
+variable to enable or disable this feature. By default it will be set to FALSE.
+If the NPC is to be rezzed by another object/script that script will also need
+to handle seating it, later unseating it, and removing it from the scene.
+Initially rezzing a PMAC NPC still requires an avatar user but if that user
+stands when NPC flag is TRUE, the NPC will not be removed (I'll need to sit down
+again and remove it). Be careful NOT to reset the core script when a PMAC NPC is
+still in the scene since this will strand it.
+- NEW/TWEAK: Added new user option to show the groups menu instead of the
+current group's animation menu when you first initiate the dialog. Subsequently
+if you close the dialog and re-show it, you should received whatever your most
+recent dialog was unless someone else was in control in the interim.
+
+**** UPDATING FROM PMAC 1.01 TO PMAC 1.02 *****
+
+- if you use in-script user settings instead of the configuration notecard,
+transfer your settings to the PMAC core 1.02 script.
+- delete the Core 1.01 script from your object's inventory
+- place a copy of the Core 1.02 script into the object's inventory - it should
+compile and enable itself automatically
+- replace the old READ ME 1 and READ ME 2 notecards with the updated versions.
+The other three core read me notecards remain unchanged.
+- no further changes are require...your system is ready for use
+- OPTIONAL: if you want to use the new object-rezzer add-on by Neo Cortex, place
+a copy of it in the object's inventory and follow the instructions he supplied
+for setting up your animations to use it. The MLP parser by Seth Nygard does not
+currently support conversion of MLP rezzed objects so you will need to do this
+manually.

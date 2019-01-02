@@ -1,28 +1,8 @@
-// :SHOW:
-// :CATEGORY:NPC
-// :NAME:PMAC
-// :AUTHOR:Aine Caoimhe
-// :KEYWORDS:
-// :CREATED:2015-11-24 20:38:40
-// :EDITED:2015-11-24  19:38:40
-// :ID:1095
-// :NUM:1873
-// :REV:1
-// :WORLD:Second Life
-// :DESCRIPTION:
-// PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.02 (OSSL)
-// :CODE:
-
-// Provided under Creative Commons Attribution-Non-Commercial-ShareAlike 4.0 International license.
-// Please be sure you read and adhere to the terms of this license: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.0 (OSSL)
+# PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.0 (OSSL) - USER INSTRUCTIONS
 by Aine Caoimhe January 2015
 
-USER INSTRUCTIONS
 
-
-**** OVERVIEW *****
+## OVERVIEW
 
 PMAC is designed with the intent that it be highly intuitive and easy to use
 with absolutely no instruction at all. 
@@ -30,7 +10,7 @@ Hopefully this will be the case for most situations, although there is one menu
 that only the owner can access -- 
 the Edit menu -- that does require detailed instructions for safe use.
 
-**** GENERAL USE -- ANIMATIONS AND GROUPS ****
+## GENERAL USE -- ANIMATIONS AND GROUPS
 
 To use a PMAC object it's as simple as "sit"....that's it!
 
@@ -101,7 +81,7 @@ If you accidentally close the dialog menu, just touch the object to have it
 re-displayed.
 
 
-**** THE OPTIONS MENU ****
+## THE OPTIONS MENU
 
 You can enter the options menu by clicking the OPTIONS button on either
 animation or groups menu pages and what you see will depend a little on who you
@@ -183,7 +163,7 @@ always show "-" and be ignored. That's in case there's a need for another button
 to do something in a future version of PMAC.
 
 
-**** OWNER-ONLY OPTIONS ****
+## OWNER-ONLY OPTIONS
 
 The very top row of the options menu is only ever displayed for the owner and
 also contains an empty "-" button that doesn't do anything and is for possible

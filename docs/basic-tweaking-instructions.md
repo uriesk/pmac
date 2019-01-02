@@ -1,26 +1,7 @@
-// :SHOW:
-// :CATEGORY:NPC
-// :NAME:PMAC
-// :AUTHOR:Aine Caoimhe
-// :KEYWORDS:
-// :CREATED:2015-11-24 20:38:40
-// :EDITED:2015-11-24  19:38:40
-// :ID:1095
-// :NUM:1874
-// :REV:1
-// :WORLD:Second Life
-// :DESCRIPTION:
-// PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.2 (OSSL)
-// :CODE:
-
-// Provided under Creative Commons Attribution-Non-Commercial-ShareAlike 4.0 International license.
-// Please be sure you read and adhere to the terms of this license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.2 (OSSL) - BASIC TWEAKING INSTRUCTIONS
 by Aine Caoimhe January 2015
 
-BASIC TWEAKING INSTRUCTIONS
-
-
-**** OVERVIEW *****
+## OVERVIEW
 
 Under the hood, PMAC is an extremely complex scripted system that allows advanced scripters to unleash the full potential of a highly flexible command system. The vast majority of owners will neither have the skills nor inclination to do this, though, so PMAC also include a set of integrated "basic" tweaking tools that are easy for almost anyone to use.
 
@@ -29,7 +10,7 @@ As an owner, and using these basic tools, you can tweak or customize positions f
 If you haven't run away in terror yet, read on...
 
 
-**** VERY BASIC TWEAKING ****
+## VERY BASIC TWEAKING
 
 Almost any owner will want to do some basic tweaking of positions at some point, and PMAC is designed to make this extremely easy. You'll make these adjustments using PMAC's built-in edit mode which you can access from the top row of the options menu by clicking the EDIT ON button.
 
@@ -94,7 +75,7 @@ NOTE: Any PMAC add-ons that also need to store permanent object position changes
 for specific details.
 
 
-**** ABOUT ANIMATION GROUP NOTECARDS ****
+## ABOUT ANIMATION GROUP NOTECARDS
 
 Other than possibly needing to edit a notecard's contents manually to add necessary data for add-ons, it
  should never be necessary to edit a PMAC animation group notecard manually unless you are making 
@@ -134,7 +115,7 @@ Names are case-sensitive, though, so you could have one another one called "Sofa
  another one called "sofa sits" and still another called "SOFA SITS" and they would all be treated as different names from one another (but you might later not be able to remember which one is which so it's a good idea not to).
 
 
-**** ABOUT NPC NOTECARDS ****
+## ABOUT NPC NOTECARDS
 
 You can easily add new NPCs to your PMAC object at any time (or delete ones you don't use). 
 Simply use any utility you like to create an appearance notecard, then place it into the 
@@ -169,7 +150,7 @@ Your newly added NPC won't appear in the list until the PMAC Core script is rese
 notecard you will need to reset the PMAC core script to have it removed from the list of available NPCs.
 
 
-**** MORE DRASTIC EDITS OF ANIMATION GROUP NOTECARDS ****
+## MORE DRASTIC EDITS OF ANIMATION GROUP NOTECARDS
 
 If you wish to, you can delete an entire animation from a notecard by opening it, finding the appropriate line for 
 the animation, then deleting the entire line. Be very careful when doing this, ensuring that you delete all of it 

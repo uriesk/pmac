@@ -19,7 +19,11 @@ available only in Opensim
 time using only a
  fraction of the sim resources of the existing systems.
 
-## KEY FEATURES *****
+## INSTALLATION AND USAGE
+
+Check out docs folder
+
+## KEY FEATURES
 
 * WORKS IN ANYTHING - The PMAC system can be put into anything, from a
 single-prim scultpy blanket or 

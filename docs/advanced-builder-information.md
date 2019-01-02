@@ -1,25 +1,7 @@
-// :SHOW:
-// :CATEGORY:NPC
-// :NAME:PMAC
-// :AUTHOR:Aine Caoimhe
-// :KEYWORDS:
-// :CREATED:2015-11-24 20:38:40
-// :EDITED:2015-11-24  19:38:40
-// :ID:1095
-// :NUM:1875
-// :REV:1
-// :WORLD:OpenSim
-// :DESCRIPTION:
-// PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.02 (OSSL)
-// :CODE:
-
-PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.0 (OSSL)
+# PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.0 (OSSL) - ADVANCED BUILDERS INFORMATION
 by Aine Caoimhe January 2015
 
-ADVANCED BUILDERS INFORMATION
-
-
-**** OVERVIEW *****
+## OVERVIEW
 
 This final notecard is more in the form of information rather than instructions and is intended as a resource for those with reasonably strong scripting skills. Before reading, you will probably wish to familiarize yourself with the contents of the Basic Tweaking Instructions notecard (particularly the final sections which talk about the notecard naming formats and the animation group card's animation line format) and take at least a cursory look through the PMAC core script.
 
@@ -32,7 +14,7 @@ This card is primarily for people who wish to either
 It is assumed that all of the terms and discussion points will be familiar to the reader or else fairly easily grasped.
 
 
-**** BUILDING/CREATING A PMAC OBJECT ****
+## BUILDING/CREATING A PMAC OBJECT
 
 Building a new system is fairly simple, although quite time-consuming. The basic steps are:
 
@@ -63,7 +45,7 @@ While the final few steps are time-consuming, the built-in editor should greatly
 - you will need to consult your add-on documentation for the internal structure they require for their commands
 
 
-**** GENERAL NOTES ABOUT PMAC ****
+## GENERAL NOTES ABOUT PMAC
 
 Before I go into the command and add-on system I want to indicate the primary design goals I had when creating the PMAC system. I wanted PMAC to adhere to the following:
 
@@ -112,7 +94,7 @@ The Options menu currently (v1.0) contains two unused buttons -- one on the top 
 My hope for PMAC was to create a new system that would be highly appealing to users by achieving all of the above design goals, and would interest serious builders due to its flexibility. I released it as a no-charge CC licensed product to help spur its adoption as well as to be another of my contributions to the community at large. I urge add-on writers and builders to give serious consideration to follow suit.
 
 
-**** COMMANDS FOR BUILDERS ****
+## COMMANDS FOR BUILDERS
 
 This section is for people using add-ons made by other people (but people interested in scripting their own add-ons need to be familiar with this as well).
 
@@ -127,7 +109,7 @@ Each of your add-ons will have documentation to indicate the correct COMMAND_NAM
 DO NOT insert any extra spaces before or after command names or curly braces! That can break things.
 
 
-**** COMMANDS FOR ADD-ON WRITERS ****
+## COMMANDS FOR ADD-ON WRITERS
 
 Any time a new animation is called PMAC sends the commands associated with it using:
     llMessageLinked(LINK_THIS,0,"GLOBAL_NEXT_AN|"+llList2String(currentAn,2),llDumpList2String(positions,"|"));   (llList2String(currentAn,2) is the entire command block)
@@ -145,7 +127,7 @@ That's it...no other rules. You can structure the syntax and naming of your comm
 I would strongly suggest not beginning your command name with GLOBAL or MAIN. To keep the likelihood of incompatibility with other add-ons to a minimum I would suggest that your add-on prefix each command name with a unique identifier (like MY_ADDON_NAME_xxxxx). Any that I write will begin with PAO_ (for Paramour Add-On).
 
 
-***** LINK MESSAGE STRUCTURE AND LIST OF GLOBAL COMMANDS *****
+## LINK MESSAGE STRUCTURE AND LIST OF GLOBAL COMMANDS
 
 When developing an add-on, please keep the above-stated design goals in mind. Ideally your add-on shouldn't drastically impact the performance of the sim, the core script, or impede the user's enjoyment of *using* the system. PMAC does all dialog communication with the user via a listener on channel=0x80000000|(integer)("0x"+(string)llGetKey()) so DO NOT EVER have your add-on send anything on that channel (though you can eaves-drop on it if you need to).
 
@@ -171,7 +153,7 @@ If your add-on needs to communicate with other scripts, be sure to make the mess
 
 A full list of global commands that PMAC sends using link messages is as follows:
 
->>> GLOBAL COMMANDS
+### GLOBAL COMMANDS
 
 At the very end of state_entry when all other initialization steps are complete:
     llMessageLinked(LINK_THIS,0,"GLOBAL_SYSTEM_RESET",NULL_KEY);
@@ -235,9 +217,8 @@ When in edit mode and a notecard is being stored (either overwriting an existing
 Any time PMAC leaves edit mode:
     llMessageLinked(LINK_THIS,0,"GLOBAL_NOTICE_LEAVING_EDIT_MODE",llDumpList2String(positions,"|"));
     >> this could be a result of a user standing/disconnecting during edit, or could be the owner intentionally leaving edit mode
->>> END OF GLOBAL COMMANDS
 
-***** THE SPECIALS MENU *****
+## THE SPECIALS MENU
 
 An add-on that needs to add a menu button to the user's dialog options may do so by registering the button and associated command string with the PMAC Core script. The button will then be added to the list of buttons to display in the SPECIALS menu. If there are no registered buttons the SPECIALS button will not be available in the options menu. When the user clicks a button, the command string associated with that button is sent and dialog control is passed to the addonto allow it to do whatever it needs to do (including additional dialog with the user). The add-on MUST then tell PMAC Core when to resume its own dialog (even if the add-on does something instantly without dialog).
 
@@ -287,12 +268,12 @@ Add-on scripts using buttons will need to account for the possibility of a varie
 - other possibilities I haven't thought of...but you should :p
 
 
-**** A FINAL WORD ABOUT COMMANDS ****
+## A FINAL WORD ABOUT COMMANDS
 
 In addition to needing to account for the possibility all of the above "OTHER CONSIDERATIONS" it's worth remembering that there are a variety of cases where the playAnimation() UDF in PMAC Core will replay the same animation that is already playing. This will frequently happen in edit mode, or when additional users sit, so your add-on will need to keep track of users to avoid de/re-rezzing objects or executing lengthy code when unnecessary.
 
 
-**** AND A COUPLE FINAL REQUESTS ***
+## AND A COUPLE FINAL REQUESTS
 
 While not mandatory, I would ask that add-on creators give their scripts a name that begins with "..addon " (two dots, then addon then a space) followed by your addon name. That way all addons should generally appear near the top of the prim's inventory list, immediately below the PMAC core script. This will make it far easier for builders and users to tell at a glance which add-ons are included
 

@@ -1,24 +1,7 @@
-// :SHOW:
-// :CATEGORY:NPC
-// :NAME:PMAC
-// :AUTHOR:Aine Caoimhe
-// :KEYWORDS:
-// :CREATED:2015-11-24 20:38:40
-// :EDITED:2015-11-24  19:38:40
-// :ID:1095
-// :NUM:1872
-// :REV:1
-// :WORLD:OpenSim
-// :DESCRIPTION:
-// PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.02 (OSSL)
-// :CODE:
-PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.0 (OSSL)
+# PARAMOUR MULTI-ANIMATION CONTROLLER (PMAC) v1.0 (OSSL) - SETUP INSTRUCTIONS
 by Aine Caoimhe January 2015
 
-OWNER INITIAL SET-UP AND INSTALLATION
-
-
-**** OVERVIEW *****
+## OVERVIEW
 
 A new PMAC system is usually supplied inside an object that is already set up and configured for general use, 
 containing all of the necessary animations, notecards, etc. In most cases you can simply "rez and play" right 
@@ -37,9 +20,7 @@ The step-by-step overview for a new user is to set (or confirm) the following:
 5. Adjust any user settings according to preference
 
 
-***************************************
-1. Ensure Server Support of the Script
-****************************************
+## 1. Ensure Server Support of the Script
 
 PMAC uses both LSL and OSSL functions that make extensive use of vectors and rotations for positioning and text-based
  notecards for data storage. The server must use the period (decimal point)(.) as the decimal separator for numbers that 
@@ -52,9 +33,7 @@ work with this system (and many other LSL scripts). Consult your operating syste
  configure the computer to use the decimal point separator.
 
 
-********************************************************************
-2. Ensure the Region is Configured to Allow the Necessary Functions
-********************************************************************
+## 2. Ensure the Region is Configured to Allow the Necessary Functions
 
 The PMAC script makes extensive use of a special set of functions that are only available in Opensim: OSSL functions. 
 Depending on your region's configuration, these may or may not be available so it is essential to check and ensure that 
@@ -67,7 +46,7 @@ the correct settings have been made. As a general rule of thumb:
 such providers any changes to the ini files must be made by their staff. If that's the case for you, please 
 provide them with a copy of this information.
 
-****** NOTE: there have been recent changes to OSSL function set-up and enabling *****
+***NOTE: there have been recent changes to OSSL function set-up and enabling***
 The method for setting OSSL functions changed as of Opensim Git #2e1f5bb (r/25931 2015-04-14) so the instructions 
 below may not be fully applicable to your region's set-up. Please see: 
 http://ainetutorials.blogspot.ca/2015/04/notice-ossl-implementation-changes-for.html for further information
@@ -171,16 +150,11 @@ necessary to allow PMAC to work correctly. After making your changes you will ne
 opensim.ini file, then restart the simulator (restarting just the region will not suffice).
 
 
-******************
-3. Rez the Object
-******************
+## 3. Rez the Object
 
 Not much to say here...just rez it to ground and position it wherever you want it to be.
 
-
-*******************************************
-4. Reset or Recompile Scripts if Necessary
-*******************************************
+## 4. Reset or Recompile Scripts if Necessary
 
 Exactly what will be required here depends on your main server configuration, your region
  configuration, and where you obtained the PMAC object. In many cases you won't need to do 
@@ -217,9 +191,7 @@ They will automatically recompile when you do this.
 You should now see the message telling you that initialization is complete and the object is ready to use.
 
 
-***********************************************
-5. Adjust User Settings According to Preference
-***********************************************
+## 5. Adjust User Settings According to Preference
 
 In most cases this is entirely optional because the object will come pre-configured to be suitable
  for the average user. If you want to look at the settings or change any, open the PMAC Core script 
@@ -229,9 +201,9 @@ section" and an "advanced/builder" section.
 I'll give detailed information for the basic ones, and assume that anyone using the advanced/builder
  ones will have enough scripting knowledge to need a little less detail.
 
-***** General User Settings: *****
+### General User Settings:
 
-Name:  defaultGroup
+#### defaultGroup
 Type : string
 Use: Identify the animation group to load when the PMAC object initializes.
 Details:
@@ -240,9 +212,7 @@ enclosed in quotation marks (with a semi-colon after the last one). If your anim
 notecard name is ".menu123A Groupname" then the value you'd enter just "Groupname" for this variable. 
 It will always be loaded initially, even if its permission settings wouldn't normally allow the user to do so.
 
-********
-
-Name:  resetOnQuit
+#### resetOnQuit
 Type : integer (boolean) TRUE or FALSE
 Use: Indicate whether the script should reset and re-initialize the object when you stop using it.
 Details:
@@ -255,10 +225,7 @@ If you set this to FALSE it will simply leave everything the way it's currently 
  sits down again it will resume with whatever animation was most recently loaded. If it was in auto mode
  when you stopped using it, it will resume auto mode when the next person sits.
 
-
-**********
-
-Name:  ownerUseReq
+#### ownerUseReq
 Type : integer (boolean) TRUE or FALSE
 Use: Indicate whether the owner must be sitting on the object before anyone else is allowed to sit
 Details:
@@ -269,9 +236,7 @@ you'd only set this to TRUE for an object that you wish to reserve for your own 
 
 If set to FALSE, anyone can sit down and start using the object even if the owner is offline or in another region.
 
-**********
-
-Name:  ownerOnlyMenus
+####  ownerOnlyMenus
 Type : integer (boolean) TRUE or FALSE
 Use: Indicate whether only the owner is allowed to access the dialog menus
 Details:
@@ -284,9 +249,7 @@ If set to FALSE, anyone can touch the object and ask to be the controller in cha
 options they see will depend on the permission settings of the individual group notecards and NPC notecards. 
 Only the owner ever sees the top line of the OPTIONS menu.
 
-***********
-
-Name:  ownerUseUnlocksPerms
+#### ownerUseUnlocksPerms
 Type : integer (boolean) TRUE or FALSE
 Use: Indicate whether other users temporarily gain "owner" permissions for groups and NPCs if the owner seated
 Details:
@@ -298,9 +261,7 @@ If set to FALSE, only the owner will ever be able to see or load notecards where
 owner-only; and only group members with the group currently active will see or be able to access notecards where 
 the permission is set to group.
 
-*************
-
-Name:  autoOn
+#### autoOn
 Type : integer (boolean) TRUE or FALSE
 Use: Indicate whether the PMAC Auto mode should be turned on by default
 Details:
@@ -315,10 +276,7 @@ and use it when someone sits down to start using it again. If you don't want tha
 set the resetOnScript=TRUE (see above) which will cause the script to reset after you stop using it and then 
 pick up and use the default value again.
 
-
-*************
-
-Name:  autoTimer
+#### autoTimer
 Type : float
 Use: Set a default time to use for the auto mode's timer
 Details:
@@ -327,18 +285,14 @@ The value set here is a number larger than 0.0 and determines the default number
 during use, too. When you stop using the object it will remember whatever value was most recently used and won't 
 pick up and use this default value again until the script is reset.
 
-*************
-
-Name:  showGroupsMenuFirst
+#### showGroupsMenuFirst
 Type : integer (boolean) TRUE or FALSE
 Use: determines which menu level to show first when initiating dialog
 Details:
 When FALSE, initiating the dialog will display the current group's animation selection menu (PMAC 1.01 and MLP 
 normal behavour). When TRUE, the groups menu will be shown instead. Default is FALSE.
 
-*************
-
-Name:  allowSoloNPC
+#### allowSoloNPC
 Type : integer (boolean) TRUE or FALSE
 Use: Determines whether an NPC can occupy a PMAC object when no avatars are currently using it
 Details:
@@ -349,7 +303,7 @@ reset the core script until you've removed any NPCs it is controlling or they wi
 the dialog option "QUIT" will still remove all NPCs regardless of this setting.
 
 
-***** Advanced/Builder Settings: *****
+### Advanced/Builder Settings:
 
 There are five variables in this section, three of which are simply convenience/preference tweaks 
 that change the appearance of the "positioner" handles when you are in edit mode.
@@ -377,9 +331,7 @@ automatically released along with the currently playing animation.
 
 After making any changes to any of the above, save and your changes will be applied.
 
-*********************************
-6. Optional Configuration Notecard
-*********************************
+## 6. Optional Configuration Notecard
 
 Instead of manually setting configurations in the script directly, you can include a configuration
  notecard in PMAC's inventory instead. Bu default it must have the name ".PMAC-CONFIG" although 
@@ -404,9 +356,7 @@ defaultGroup = Cuddles
 ResetOnQuit = TRUE
 allowSoloNPC = TRUE
 
-***************************
-7. Other
-***************************
+## 7. Other
 
 In most cases you'll now be up and ready to go and you will probably not have had to do many of the above steps.
 
